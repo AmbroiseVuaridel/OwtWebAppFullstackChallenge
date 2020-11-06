@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UpsertComponent } from './upsert.component';
+import {RouterModule, Routes} from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: UpsertComponent
+  }
+];
+
+@NgModule({
+  declarations: [
+    UpsertComponent
+  ],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+  ]
+})
+export class UpsertModule { }
