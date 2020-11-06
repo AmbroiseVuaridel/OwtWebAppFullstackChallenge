@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 services:
 
   mysql:
@@ -11,8 +11,6 @@ services:
         - MYSQL_PASSWORD=superSecretPSW
     ports:
     - "1306:3306"
-    networks:
-        - mysql-db
     restart: always
 
   owt-web-app-fullstack-challenge:
@@ -21,8 +19,6 @@ services:
     restart: on-failure
     depends_on:
       - mysql
-    networks:
-          - mysql-db
     ports:
       - 8083:8083
     environment:
@@ -31,7 +27,3 @@ services:
       - DATABASE_PASSWORD=superSecretPSW
       - DATABASE_NAME=OWTdb
       - DATABASE_PORT=6066
-
-networks:
-   mysql-db:
-     driver: bridge

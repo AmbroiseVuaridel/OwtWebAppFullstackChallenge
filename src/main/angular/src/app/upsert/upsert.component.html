@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
           <button [disabled]="!form.valid" class="btn btn-primary" (click)="save()"><fa-icon [icon]="['fas','save']" slot="end"></fa-icon></button>
-          <span style="margin: 15px">Or</span>
+          <span *ngIf="id" style="margin: 15px">Or</span>
           <button *ngIf="id" (click)="delete()" class="btn btn-primary"><fa-icon [icon]="['fas','trash-alt']" slot="end"></fa-icon></button>
         </div>
       </form>
