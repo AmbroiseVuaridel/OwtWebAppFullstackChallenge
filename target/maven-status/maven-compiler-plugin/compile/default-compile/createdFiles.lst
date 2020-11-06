@@ -1,0 +1,11 @@
+com/example/demo/UserRepository.class
+com/example/demo/ResourceNotFoundException.class
+com/example/demo/ErrorDetails.class
+com/example/demo/MyAppWebMvcConfigurer$1.class
+com/example/demo/GlobalExceptionHandler.class
+com/example/demo/MyAppWebMvcConfigurer.class
+com/example/demo/Boat.class
+com/example/demo/BoatRepository.class
+com/example/demo/AngularTestApplication.class
+com/example/demo/BoatController.class
+com/example/demo/User.class
