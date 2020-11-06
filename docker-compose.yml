@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    environment:
+        - MYSQL_ROOT_PASSWORD=superSecretRootPSW
+        - MYSQL_DATABASE=OWTdb
+        - MYSQL_USER=OWTuser
+        - MYSQL_PASSWORD=superSecretPSW
+    ports:
+    - "1306:3306"
+    networks:
+        - mysql-db
+    restart: always
+
+  owt-web-app-fullstack-challenge:
+    container_name: owt-web-app-fullstack-challenge
+    image: owt-web-app-fullstack-challenge
+    restart: on-failure
+    depends_on:
+      - mysql
+    networks:
+          - mysql-db
+    ports:
+      - 8083:8083
+    environment:
+      - DATABASE_HOST=MySQLcontainer
+      - DATABASE_USER=OWTuser
+      - DATABASE_PASSWORD=superSecretPSW
+      - DATABASE_NAME=OWTdb
+      - DATABASE_PORT=6066
+
+networks:
+   mysql-db:
+     driver: bridge
