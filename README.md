@@ -1,6 +1,8 @@
 # OwtWebAppFullstackChallenge
 
-# docker build -f Dockerfile -t owt-web-app-fullstack-challenge .
 
+```bash
+docker build -f Dockerfile -t owt-web-app-fullstack-challenge .
+docker-compose up
+```
 
-# docker-compose up
